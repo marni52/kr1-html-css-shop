@@ -24,6 +24,18 @@ orderButtons.forEach((button) => {
   });
 });
 
+// Открываем форму, если на страницу перешли по ссылке index.html#order
+// (кнопка «Перейти к форме» на странице контактов).
+function openOrderFromHash() {
+  if (window.location.hash === '#order') {
+    selectedProductInput.value = '';
+    orderDialog.showModal();
+  }
+}
+
+openOrderFromHash();
+window.addEventListener('hashchange', openOrderFromHash);
+
 // Закрываем модальное окно по кнопке «Закрыть».
 closeDialogButton.addEventListener('click', () => {
   orderDialog.close();
@@ -63,7 +75,8 @@ orderForm.addEventListener('submit', (event) => {
     return;
   }
 
-  // Показываем сообщение об успешной отправке.
+  // Показываем сообщение об успешной отправке
+  // и прокручиваем к нему страницу.
   successMessage.hidden = false;
 
   // Очищаем форму.
@@ -71,4 +84,6 @@ orderForm.addEventListener('submit', (event) => {
 
   // Закрываем модальное окно.
   orderDialog.close();
+  successMessage.focus();
+  successMessage.scrollIntoView({ block: 'center' });
 });

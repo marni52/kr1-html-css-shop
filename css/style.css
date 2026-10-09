@@ -82,6 +82,16 @@ footer {
   background-color: var(--color-surface);
 }
 
+/*
+  Содержимое подвала выравнивается по той же ширине контейнера,
+  что и шапка и разделы страницы.
+*/
+footer > * {
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ===============================
    3. Общие элементы интерфейса
    =============================== */
@@ -476,7 +486,7 @@ a:focus-visible {
 */
 .success-message {
   max-width: var(--container-width);
-  margin: var(--space-lg) auto;
+  margin: var(--space-lg) 0 0;
   padding: var(--space-md);
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-bg);
