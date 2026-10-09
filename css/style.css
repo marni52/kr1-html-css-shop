@@ -47,6 +47,13 @@
   box-sizing: border-box;
 }
 
+/*
+  Плавная прокрутка к якорям.
+*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -110,6 +117,14 @@ a:focus-visible {
 .button:hover {
   color: var(--color-white);
   background-color: var(--color-primary-dark);
+}
+
+/*
+  Подсветка цели якорной ссылки (#advantages, #popular, #contacts).
+*/
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
 
 .button:active {
@@ -193,6 +208,26 @@ a:focus-visible {
 .site-nav__list a:hover {
   color: var(--color-primary-dark);
   text-decoration: underline;
+}
+
+/*
+  Хлебные крошки на внутренних страницах.
+  Текущая страница — span, разделитель добавляется через ::before.
+*/
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
 }
 
 /*
