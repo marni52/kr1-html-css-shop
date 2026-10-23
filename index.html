@@ -1,170 +1,315 @@
 <!DOCTYPE html>
+<!-- Язык страницы - русский -->
 <html lang="ru">
+<!-- head - служебная информация о странице, на экране не видна -->
 <head>
+  <!-- Кодировка UTF-8, чтобы правильно отображались русские буквы -->
   <meta charset="UTF-8">
+  <!-- Ширина страницы равна ширине экрана устройства -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный интернет-магазин цифровой техники и аксессуаров: популярные товары и форма заявки.">
+  <!-- Краткое описание страницы для поисковиков -->
+  <meta name="description" content="Интернет-магазин цифровой техники и аксессуаров: наушники, клавиатуры, колонки. Популярные товары, отзывы и быстрая заявка.">
+  <!-- Open Graph: как выглядит ссылка на сайт в мессенджерах -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный интернет-магазин цифровой техники и аксессуаров: популярные товары и форма заявки.">
+  <!-- Заголовок для превью ссылки -->
+  <meta property="og:title" content="ShopProject — интернет-магазин цифровой техники">
+  <!-- Описание для превью ссылки -->
+  <meta property="og:description" content="Интернет-магазин цифровой техники и аксессуаров: наушники, клавиатуры, колонки. Популярные товары, отзывы и быстрая заявка.">
+  <!-- Картинка для превью ссылки -->
   <meta property="og:image" content="https://marni52.github.io/kr1-html-css-shop/images/preview.jpg">
-  <title>Учебный интернет-магазин</title>
+  <!-- Название вкладки браузера (у каждой страницы своё) -->
+  <title>ShopProject — интернет-магазин цифровой техники</title>
+  <!-- Иконка сайта во вкладке -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <!-- Подключение общего файла стилей -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Подключение скрипта; defer - скрипт выполнится после загрузки HTML -->
   <script src="js/main.js" defer></script>
 </head>
+<!-- body - всё, что видно на экране -->
 <body>
+  <!-- Шапка сайта; класс site-header делает её «липкой» (position: sticky) -->
   <header class="site-header">
+    <!-- Внутренний контейнер: логотип и меню в одну строку через Flexbox -->
     <div class="site-header__inner">
+      <!-- Логотип - ссылка на главную страницу -->
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
+      <!-- Основное меню; aria-label объясняет назначение блока экранному диктору -->
       <nav class="site-nav" aria-label="Основная навигация">
+        <!-- Список пунктов меню; у текущей страницы модификатор site-nav__link--active и aria-current="page" -->
         <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- main - основное содержимое страницы, на странице он один -->
   <main>
+    <!-- Hero-блок: первый экран, текст и картинка в две колонки (Grid) -->
     <section class="hero">
-      <h1 class="hero__title">Учебный интернет-магазин</h1>
-      <p class="hero__text">
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина цифровой техники и аксессуаров.
-      </p>
-      <a class="button button--primary hero__button" href="#popular">Перейти к товарам</a>
+      <!-- Левая колонка с текстом -->
+      <div class="hero__content">
+        <!-- Главный заголовок страницы h1 -->
+        <h1 class="hero__title">Техника и аксессуары для работы и игр</h1>
+        <!-- Подзаголовок -->
+        <p class="hero__text">Наушники, клавиатуры, колонки и другие гаджеты с доставкой по Москве за один день.</p>
+        <!-- Кнопки первого экрана в строку (Flexbox) -->
+        <div class="hero__actions">
+          <!-- Основная кнопка - переход в каталог -->
+          <a class="button button--primary button--large" href="catalog.html">Перейти в каталог</a>
+          <!-- Второстепенная кнопка - якорь на популярные товары -->
+          <a class="button button--secondary button--large" href="#popular">Популярные товары</a>
+        </div>
+      </div>
+      <!-- Правая колонка с картинкой витрины -->
+      <img class="hero__image" src="images/products/store.svg" alt="Витрина магазина ShopProject" width="400" height="300">
     </section>
 
+    <!-- Раздел «Преимущества»; id - цель якоря index.html#advantages -->
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества проекта</h2>
-
+      <!-- Заголовок раздела -->
+      <h2 class="section__title">Почему выбирают нас</h2>
+      <!-- Список преимуществ, 4 колонки (Grid) -->
       <ul class="advantages-list">
-        <li class="advantages-list__item">понятная HTML-структура;</li>
-        <li class="advantages-list__item">семантические блоки страницы;</li>
-        <li class="advantages-list__item">подключение внешнего CSS-файла;</li>
-        <li class="advantages-list__item">подготовка к разработке многостраничного сайта.</li>
+        <!-- Преимущество 1; aria-hidden скрывает эмодзи от экранного диктора -->
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">🚚</span><span class="advantages-list__title">Доставка за 1 день</span><span class="advantages-list__text">Привезём заказ по Москве на следующий день.</span></li>
+        <!-- Преимущество 2 -->
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">🛡️</span><span class="advantages-list__title">Гарантия 1 год</span><span class="advantages-list__text">Обменяем товар, если он сломался.</span></li>
+        <!-- Преимущество 3 -->
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">💳</span><span class="advantages-list__title">Оплата при получении</span><span class="advantages-list__text">Картой или наличными курьеру.</span></li>
+        <!-- Преимущество 4 -->
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">💬</span><span class="advantages-list__title">Консультация</span><span class="advantages-list__text">Поможем выбрать товар по телефону.</span></li>
       </ul>
     </section>
 
+    <!-- Раздел «Популярные товары»; id - цель якоря index.html#popular -->
     <section class="section" id="popular">
+      <!-- Заголовок раздела -->
       <h2 class="section__title">Популярные товары</h2>
-
+      <!-- Сетка карточек: 3 колонки через CSS Grid -->
       <div class="products-grid">
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Беспроводные наушники</h3>
+        <!-- Карточка товара: блок product-card с модификатором product-card--discount -->
+        <article class="product-card product-card--discount">
+          <!-- Бейдж «Скидка»: position: absolute в правом верхнем углу карточки -->
+          <span class="product-card__badge product-card__badge--sale">Скидка</span>
+          <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
+          <img class="product-card__image" src="images/products/headphones.svg" alt="Беспроводные наушники" width="400" height="300" loading="lazy">
+          <!-- Категория товара -->
+          <p class="product-card__category">Аудио</p>
+          <!-- Название товара - ссылка на страницу товара -->
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Беспроводные наушники</a></h3>
+          <!-- Краткое описание -->
           <p class="product-card__description">Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
-          <p class="product-card__price">Цена: 4 990 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Беспроводные наушники">
-            Заказать
-          </button>
+          <!-- Цена; старая цена перечёркнута (del - удалённый текст) -->
+          <p class="product-card__price">4 990 руб. <del class="product-card__old-price">5 990 руб.</del></p>
+          <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
+          <div class="product-card__actions">
+            <!-- Кнопка «Заказать»: data-product хранит название товара для формы -->
+            <button class="button button--primary product-card__button" type="button" data-product="Беспроводные наушники">Заказать</button>
+            <!-- Ссылка на подробную страницу товара -->
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </div>
         </article>
 
-        <article class="product-card">
+        <!-- Карточка товара: блок product-card с модификатором product-card--featured -->
+        <article class="product-card product-card--featured">
+          <!-- Бейдж «Хит»: position: absolute в правом верхнем углу карточки -->
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
+          <img class="product-card__image" src="images/products/keyboard.svg" alt="Механическая клавиатура" width="400" height="300" loading="lazy">
+          <!-- Категория товара -->
+          <p class="product-card__category">Периферия</p>
+          <!-- Название товара -->
           <h3 class="product-card__title">Механическая клавиатура</h3>
+          <!-- Краткое описание -->
           <p class="product-card__description">Компактная раскладка 75%, подсветка, переключатели Red.</p>
-          <p class="product-card__price">Цена: 6 500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Механическая клавиатура">
-            Заказать
-          </button>
+          <!-- Цена -->
+          <p class="product-card__price">6 500 руб.</p>
+          <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
+          <div class="product-card__actions">
+            <!-- Кнопка «Заказать»: data-product хранит название товара для формы -->
+            <button class="button button--primary product-card__button" type="button" data-product="Механическая клавиатура">Заказать</button>
+          </div>
         </article>
 
+        <!-- Карточка товара: блок product-card -->
         <article class="product-card">
+          <!-- Бейдж «Новинка»: position: absolute в правом верхнем углу карточки -->
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
+          <img class="product-card__image" src="images/products/speaker.svg" alt="Портативная колонка" width="400" height="300" loading="lazy">
+          <!-- Категория товара -->
+          <p class="product-card__category">Аудио</p>
+          <!-- Название товара -->
           <h3 class="product-card__title">Портативная колонка</h3>
+          <!-- Краткое описание -->
           <p class="product-card__description">Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
-          <p class="product-card__price">Цена: 3 200 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Портативная колонка">
-            Заказать
-          </button>
+          <!-- Цена -->
+          <p class="product-card__price">3 200 руб.</p>
+          <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
+          <div class="product-card__actions">
+            <!-- Кнопка «Заказать»: data-product хранит название товара для формы -->
+            <button class="button button--primary product-card__button" type="button" data-product="Портативная колонка">Заказать</button>
+          </div>
         </article>
       </div>
 
-      <p class="success-message" id="success-message" role="status" tabindex="-1" hidden>
-        Форма успешно отправлена!
-      </p>
+      <!-- Сообщение об успешной отправке; hidden - скрыто, пока форма не отправлена; role="status" - диктор прочитает его -->
+      <p class="success-message" id="success-message" role="status" tabindex="-1" hidden>Форма успешно отправлена! Мы свяжемся с вами в течение часа.</p>
     </section>
 
-    <aside class="aside-info">
-      <h2 class="aside-info__title">Информация для студентов</h2>
-      <p class="aside-info__text">
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
+    <!-- aside - дополнительный блок: акция, не основное содержимое страницы -->
+    <aside class="promo">
+      <!-- Текст акции -->
+      <div class="promo__content">
+        <!-- Заголовок акции -->
+        <h2 class="promo__title">Скидка 10% на первый заказ</h2>
+        <!-- Условия акции -->
+        <p class="promo__text">Назовите менеджеру промокод <strong>FIRST10</strong> при оформлении заявки.</p>
+      </div>
+      <!-- Кнопка перехода к заявке -->
+      <a class="button button--primary" href="order.html">Оформить заявку</a>
     </aside>
+
+    <!-- Раздел «Отзывы»; id - цель якоря index.html#reviews -->
+    <section class="section" id="reviews">
+      <!-- Заголовок раздела -->
+      <h2 class="section__title">Отзывы покупателей</h2>
+      <!-- Отзывы сеткой в 3 колонки -->
+      <div class="reviews">
+        <!-- Отзыв 1: figure объединяет цитату и подпись -->
+        <figure class="review">
+          <!-- Оценка звёздами; role="img" и aria-label - оценка словами для экранного диктора -->
+          <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
+          <!-- Текст отзыва -->
+          <blockquote class="review__text">Наушники пришли на следующий день, шумоподавление отличное.</blockquote>
+          <!-- Автор отзыва -->
+          <figcaption><cite class="review__author">Мария</cite></figcaption>
+        </figure>
+        <!-- Отзыв 2 -->
+        <figure class="review">
+          <!-- Оценка -->
+          <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
+          <!-- Текст -->
+          <blockquote class="review__text">Помогли выбрать клавиатуру под мои задачи, очень доволен.</blockquote>
+          <!-- Автор -->
+          <figcaption><cite class="review__author">Денис</cite></figcaption>
+        </figure>
+        <!-- Отзыв 3 -->
+        <figure class="review">
+          <!-- Оценка 4 из 5 -->
+          <p class="review__rating" role="img" aria-label="Оценка 4 из 5">★★★★☆</p>
+          <!-- Текст -->
+          <blockquote class="review__text">Колонка громкая, но хотелось бы больше цветов на выбор.</blockquote>
+          <!-- Автор -->
+          <figcaption><cite class="review__author">Ольга</cite></figcaption>
+        </figure>
+      </div>
+    </section>
   </main>
 
+  <!-- Подвал сайта; id="contacts" - цель якорной ссылки index.html#contacts -->
   <footer class="site-footer" id="contacts">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    <!-- Три колонки подвала через Grid -->
+    <div class="site-footer__inner">
+      <!-- Колонка «О магазине» -->
+      <section class="site-footer__column">
+        <!-- Заголовок колонки -->
+        <h2 class="site-footer__title">ShopProject</h2>
+        <!-- Описание магазина -->
+        <p class="site-footer__text">Учебный интернет-магазин цифровой техники и аксессуаров.</p>
+        <!-- Режим работы -->
+        <p class="site-footer__text">Ежедневно с 10:00 до 20:00</p>
+      </section>
+
+      <!-- Колонка с навигацией по разделам главной страницы -->
+      <nav class="site-footer__column" aria-label="Разделы сайта">
+        <!-- Заголовок колонки -->
+        <h2 class="site-footer__title">Разделы</h2>
+        <!-- Список якорных ссылок на разделы главной -->
+        <ul class="site-footer__list">
+          <li class="site-footer__item"><a href="index.html#advantages">Преимущества</a></li>
+          <li class="site-footer__item"><a href="index.html#popular">Популярные товары</a></li>
+          <li class="site-footer__item"><a href="index.html#reviews">Отзывы</a></li>
+          <li class="site-footer__item"><a href="contacts.html#faq">Частые вопросы</a></li>
+        </ul>
+      </nav>
+
+      <!-- Колонка с контактами -->
+      <section class="site-footer__column">
+        <!-- Заголовок колонки -->
+        <h2 class="site-footer__title">Контакты</h2>
+        <!-- Телефон: tel: открывает звонок на телефоне -->
+        <p class="site-footer__text"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+        <!-- Почта: mailto: открывает почтовую программу -->
+        <p class="site-footer__text"><a href="mailto:info@example.com">info@example.com</a></p>
+      </section>
+    </div>
+
+    <!-- Строка с копирайтом; &copy; - значок © -->
+    <p class="site-footer__copyright">&copy; 2026 ShopProject. Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p>
   </footer>
 
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+  <!-- Кнопка «Наверх»: position: fixed держит её в правом нижнем углу окна; #top - начало страницы -->
+  <a class="back-to-top" href="#top" aria-label="Наверх">&uarr;</a>
 
+  <!-- Модальное окно заявки; открывается методом showModal() из js/main.js -->
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <!-- Заголовок окна; на него ссылается aria-labelledby -->
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <!-- Сюда скрипт пишет название выбранного товара -->
+    <p class="order-dialog__product" id="order-dialog-product"></p>
+
+    <!-- Форма заявки; novalidate - проверку делает наш скрипт, а не автоматическая отправка браузера -->
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <!-- Скрытое поле: сюда скрипт записывает выбранный товар -->
       <input id="selected-product" name="selected-product" type="hidden">
 
+      <!-- Поле «Имя» -->
       <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
+        <!-- Подпись; for совпадает с id поля - клик по подписи ставит курсор в поле -->
+        <label class="order-form__label" for="order-name">Имя <span class="order-form__required">*</span></label>
+        <!-- Текстовое поле: минимум 2 символа, обязательно для заполнения -->
+        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
       </div>
 
+      <!-- Поле «E-mail» -->
       <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
+        <!-- Подпись поля -->
+        <label class="order-form__label" for="order-email">E-mail <span class="order-form__required">*</span></label>
+        <!-- type="email" - браузер проверяет формат почты -->
+        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
       </div>
 
+      <!-- Поле «Телефон» -->
       <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+        <!-- Подпись поля -->
+        <label class="order-form__label" for="order-phone">Телефон <span class="order-form__required">*</span></label>
+        <!-- type="tel" открывает цифровую клавиатуру на телефоне; pattern - формат номера -->
+        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="order-phone-hint" required>
+        <!-- Подсказка формата; связана с полем через aria-describedby -->
+        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
       </div>
 
+      <!-- Поле «Дата связи» (необязательное) -->
       <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
+        <!-- Подпись поля -->
+        <label class="order-form__label" for="order-date">Удобная дата связи</label>
+        <!-- type="date" - выбор даты из календаря -->
+        <input class="order-form__input" id="order-date" name="date" type="date">
       </div>
 
+      <!-- Поле «Тема заявки» -->
       <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <!-- Подпись поля -->
+        <label class="order-form__label" for="order-topic">Тема заявки <span class="order-form__required">*</span></label>
+        <!-- Выпадающий список; пустой value у первого пункта - значит, тема не выбрана -->
         <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="product">Заказ товара</option>
@@ -173,32 +318,29 @@
         </select>
       </div>
 
+      <!-- Поле «Комментарий» -->
       <div class="order-form__field">
+        <!-- Подпись поля -->
         <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea
-          class="order-form__textarea"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
+        <!-- textarea - многострочное поле, rows="3" - высота в 3 строки -->
+        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Укажите дополнительную информацию"></textarea>
       </div>
 
-      <div class="order-form__field order-form__field--checkbox">
-        <label class="order-form__checkbox-label">
-          <input
-            class="order-form__checkbox"
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-          Я согласен на обработку данных
+      <!-- Согласие на обработку данных -->
+      <div class="order-form__field">
+        <!-- Флажок внутри label - клик по тексту тоже ставит галочку -->
+        <label class="order-form__option">
+          <!-- required - без галочки форма не отправится -->
+          <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" required>
+          Я согласен на обработку персональных данных
         </label>
       </div>
 
+      <!-- Кнопки формы -->
       <div class="order-form__actions">
+        <!-- type="button" - кнопка не отправляет форму, а закрывает окно -->
         <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <!-- type="submit" - отправка формы -->
         <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
