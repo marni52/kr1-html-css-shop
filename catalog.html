@@ -13,18 +13,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <div class="site-header">
-      <a class="site-logo" href="index.html">ShopProject</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -32,13 +32,13 @@
 
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a href="index.html">Главная</a>
-      <span>Каталог</span>
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Каталог</span>
     </nav>
 
     <section class="section">
-      <h1>Каталог товаров</h1>
-      <p>
+      <h1 class="section__title">Каталог товаров</h1>
+      <p class="section__text">
         На этой странице представлен учебный каталог товаров.
         В дальнейшем здесь будут добавлены фильтры, сортировка и более
         подробные карточки.
@@ -47,95 +47,95 @@
 
     <section class="catalog-layout">
       <aside class="catalog-filters">
-        <h2>Фильтры</h2>
+        <h2 class="catalog-filters__title">Фильтры</h2>
 
         <form class="filters-form" action="#" method="get">
-          <fieldset>
-            <legend>Категория</legend>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Категория</legend>
 
-            <label>
-              <input type="checkbox" name="category" value="all">
+            <label class="filters-form__label">
+              <input class="filters-form__checkbox" type="checkbox" name="category" value="all">
               Все товары
             </label>
 
-            <label>
-              <input type="checkbox" name="category" value="popular">
+            <label class="filters-form__label">
+              <input class="filters-form__checkbox" type="checkbox" name="category" value="popular">
               Популярные
             </label>
 
-            <label>
-              <input type="checkbox" name="category" value="new">
+            <label class="filters-form__label">
+              <input class="filters-form__checkbox" type="checkbox" name="category" value="new">
               Новинки
             </label>
           </fieldset>
 
-          <fieldset>
-            <legend>Цена</legend>
+          <fieldset class="filters-form__group">
+            <legend class="filters-form__legend">Цена</legend>
 
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label class="filters-form__label" for="price-from">От</label>
+            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
 
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+            <label class="filters-form__label" for="price-to">До</label>
+            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
 
-          <button class="button" type="submit">Применить</button>
+          <button class="button button--primary filters-form__button" type="submit">Применить</button>
         </form>
       </aside>
 
       <section class="catalog-products">
-        <h2>Список товаров</h2>
+        <h2 class="catalog-products__title">Список товаров</h2>
 
         <div class="products-grid">
           <article class="product-card">
-            <h3>Беспроводные наушники</h3>
-            <p>Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
-            <p>Цена: 4 990 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <h3 class="product-card__title">Беспроводные наушники</h3>
+            <p class="product-card__description">Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
+            <p class="product-card__price">Цена: 4 990 руб.</p>
+            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <h3>Механическая клавиатура</h3>
-            <p>Компактная раскладка 75%, подсветка, переключатели Red.</p>
-            <p>Цена: 6 500 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <h3 class="product-card__title">Механическая клавиатура</h3>
+            <p class="product-card__description">Компактная раскладка 75%, подсветка, переключатели Red.</p>
+            <p class="product-card__price">Цена: 6 500 руб.</p>
+            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <h3>Портативная колонка</h3>
-            <p>Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
-            <p>Цена: 3 200 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <h3 class="product-card__title">Портативная колонка</h3>
+            <p class="product-card__description">Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
+            <p class="product-card__price">Цена: 3 200 руб.</p>
+            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <h3>Игровая мышь</h3>
-            <p>Сенсор 26 000 DPI, вес 63 г, беспроводное подключение.</p>
-            <p>Цена: 3 900 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <h3 class="product-card__title">Игровая мышь</h3>
+            <p class="product-card__description">Сенсор 26 000 DPI, вес 63 г, беспроводное подключение.</p>
+            <p class="product-card__price">Цена: 3 900 руб.</p>
+            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <h3>Внешний аккумулятор</h3>
-            <p>Ёмкость 20 000 мА·ч, быстрая зарядка 65 Вт, USB-C.</p>
-            <p>Цена: 2 700 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <h3 class="product-card__title">Внешний аккумулятор</h3>
+            <p class="product-card__description">Ёмкость 20 000 мА·ч, быстрая зарядка 65 Вт, USB-C.</p>
+            <p class="product-card__price">Цена: 2 700 руб.</p>
+            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <h3>Веб-камера Full HD</h3>
-            <p>1080p 60 к/с, автофокус, встроенный стереомикрофон.</p>
-            <p>Цена: 3 500 руб.</p>
-            <a class="button" href="index.html#popular">Подробнее</a>
+            <h3 class="product-card__title">Веб-камера Full HD</h3>
+            <p class="product-card__description">1080p 60 к/с, автофокус, встроенный стереомикрофон.</p>
+            <p class="product-card__price">Цена: 3 500 руб.</p>
+            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
           </article>
         </div>
       </section>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer">
+    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 </body>
 </html>
