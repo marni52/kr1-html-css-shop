@@ -1,89 +1,126 @@
-// Получаем модальное окно по id.
-const orderDialog = document.getElementById('order-dialog');
+// =========================================================
+// 1. Общая проверка формы
+// 2. Модальное окно заявки (главная страница и страница товара)
+// 3. Форма на странице оформления заявки order.html
+// =========================================================
 
-// Получаем все кнопки заказа в карточках товаров.
-const orderButtons = document.querySelectorAll('.product-card__button');
+// =========================================================
+// 1. Общая проверка формы
+// =========================================================
 
-// Получаем кнопку закрытия модального окна.
-const closeDialogButton = document.getElementById('close-order-dialog');
+function validateForm(form) {
+  const fields = Array.from(form.elements);
 
-// Получаем скрытое поле, в которое будет записан выбранный товар.
-const selectedProductInput = document.getElementById('selected-product');
-
-// Перебираем все кнопки «Заказать».
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product;
-
-    // Записываем название товара в скрытое поле формы.
-    selectedProductInput.value = productName;
-
-    // Открываем модальное окно.
-    orderDialog.showModal();
-  });
-});
-
-// Открываем форму, если на страницу перешли по ссылке index.html#order
-// (кнопка «Перейти к форме» на странице контактов).
-function openOrderFromHash() {
-  if (window.location.hash === '#order') {
-    selectedProductInput.value = '';
-    orderDialog.showModal();
-  }
-}
-
-openOrderFromHash();
-window.addEventListener('hashchange', openOrderFromHash);
-
-// Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
-
-// Получаем форму заявки.
-const orderForm = document.getElementById('order-form');
-
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
-
-// Обрабатываем отправку формы.
-orderForm.addEventListener('submit', (event) => {
-  // Отменяем стандартную отправку формы,
-  // потому что backend пока не подключён.
-  event.preventDefault();
-
-  // Сбрасываем предыдущие признаки ошибок.
-  const formElements = Array.from(orderForm.elements);
-
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
+  fields.forEach((field) => {
+    if (field.willValidate) {
+      field.removeAttribute('aria-invalid');
     }
   });
 
-  // Проверяем встроенные HTML-ограничения формы.
-  if (!orderForm.checkValidity()) {
-    formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
-      }
-    });
-
-    // Показываем стандартные сообщения браузера.
-    orderForm.reportValidity();
-    return;
+  if (form.checkValidity()) {
+    return true;
   }
 
-  // Показываем сообщение об успешной отправке
-  // и прокручиваем к нему страницу.
-  successMessage.hidden = false;
+  fields.forEach((field) => {
+    if (field.willValidate && !field.checkValidity()) {
+      field.setAttribute('aria-invalid', 'true');
+    }
+  });
 
-  // Очищаем форму.
-  orderForm.reset();
+  form.reportValidity();
 
-  // Закрываем модальное окно.
-  orderDialog.close();
-  successMessage.focus();
-  successMessage.scrollIntoView({ block: 'center' });
-});
+  return false;
+}
+
+function showSuccess(message) {
+  message.hidden = false;
+  message.focus();
+  message.scrollIntoView({ block: 'center' });
+}
+
+// =========================================================
+// 2. Модальное окно заявки
+// =========================================================
+
+const orderDialog = document.getElementById('order-dialog');
+
+if (orderDialog) {
+  const orderButtons = document.querySelectorAll('[data-product]');
+  const closeDialogButton = document.getElementById('close-order-dialog');
+  const selectedProductInput = document.getElementById('selected-product');
+  const dialogProductText = document.getElementById('order-dialog-product');
+  const orderForm = document.getElementById('order-form');
+  const successMessage = document.getElementById('success-message');
+
+  function openOrderDialog(productName) {
+    selectedProductInput.value = productName;
+    dialogProductText.textContent = productName ? `Товар: ${productName}` : 'Консультация по выбору товара';
+    orderDialog.showModal();
+  }
+
+  orderButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      openOrderDialog(button.dataset.product);
+    });
+  });
+
+  closeDialogButton.addEventListener('click', () => {
+    orderDialog.close();
+  });
+
+  orderDialog.addEventListener('click', (event) => {
+    if (event.target === orderDialog) {
+      orderDialog.close();
+    }
+  });
+
+  function openFromHash() {
+    if (window.location.hash === '#order') {
+      openOrderDialog('');
+    }
+  }
+
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+
+  orderForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!validateForm(orderForm)) {
+      return;
+    }
+
+    orderForm.reset();
+    orderDialog.close();
+    showSuccess(successMessage);
+  });
+}
+
+// =========================================================
+// 3. Форма на странице order.html
+// =========================================================
+
+const pageOrderForm = document.getElementById('page-order-form');
+
+if (pageOrderForm) {
+  const productSelect = document.getElementById('page-order-product');
+  const pageSuccessMessage = document.getElementById('page-success-message');
+
+  const params = new URLSearchParams(window.location.search);
+  const productFromUrl = params.get('product');
+
+  if (productFromUrl) {
+    productSelect.value = productFromUrl;
+  }
+
+  pageOrderForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!validateForm(pageOrderForm)) {
+      return;
+    }
+
+    pageOrderForm.reset();
+    showSuccess(pageSuccessMessage);
+  });
+}

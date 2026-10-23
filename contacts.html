@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина: телефон, e-mail, адрес и обратная связь.">
+  <meta name="description" content="Контакты ShopProject: телефон, e-mail, адрес и режим работы, ответы на частые вопросы и форма заявки.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Контакты — Учебный интернет-магазин">
-  <meta property="og:description" content="Контактная информация учебного интернет-магазина: телефон, e-mail, адрес и обратная связь.">
+  <meta property="og:title" content="Контакты — ShopProject">
+  <meta property="og:description" content="Контакты ShopProject: телефон, e-mail, адрес и режим работы, ответы на частые вопросы и форма заявки.">
   <meta property="og:image" content="https://marni52.github.io/kr1-html-css-shop/images/preview.jpg">
-  <title>Контакты — Учебный интернет-магазин</title>
+  <title>Контакты — ShopProject</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,12 +19,11 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
+        <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -38,30 +37,75 @@
 
     <section class="section">
       <h1 class="section__title">Контакты</h1>
-      <p class="section__text">
-        Здесь размещается контактная информация учебного интернет-магазина.
-      </p>
-
+      <p class="section__text">Звоните, пишите или приезжайте в пункт выдачи.</p>
       <ul class="contacts-list">
-        <li class="contacts-list__item">Телефон: +7 (900) 000-00-00</li>
-        <li class="contacts-list__item">E-mail: info@example.com</li>
-        <li class="contacts-list__item">Адрес: г. Москва, учебный проект</li>
-        <li class="contacts-list__item">Режим работы: ежедневно с 10:00 до 20:00</li>
+        <li class="contacts-list__item"><span class="contacts-list__label">Телефон</span><a class="contacts-list__value" href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <li class="contacts-list__item"><span class="contacts-list__label">E-mail</span><a class="contacts-list__value" href="mailto:info@example.com">info@example.com</a></li>
+        <li class="contacts-list__item"><span class="contacts-list__label">Адрес</span><address class="contacts-list__value">г. Москва, пр-т Вернадского, 78</address></li>
+        <li class="contacts-list__item"><span class="contacts-list__label">Режим работы</span><span class="contacts-list__value">Ежедневно 10:00-20:00</span></li>
       </ul>
     </section>
 
     <section class="section" id="feedback">
       <h2 class="section__title">Обратная связь</h2>
-      <p class="section__text">
-        Для отправки заявки используйте форму в модальном окне на главной странице.
-      </p>
-      <a class="button button--primary" href="index.html#order">Перейти к форме</a>
+      <p class="section__text">Оставьте заявку - мы перезвоним и ответим на вопросы.</p>
+      <a class="button button--primary" href="order.html">Оформить заявку</a>
+      <a class="button button--secondary" href="index.html#order">Быстрая заявка</a>
+    </section>
+
+    <section class="section faq" id="faq">
+      <h2 class="section__title">Частые вопросы</h2>
+
+      <details class="faq__item">
+        <summary class="faq__question">Сколько стоит доставка?</summary>
+        <p class="faq__answer">Курьером по Москве - бесплатно, почтой - от 350 рублей в зависимости от региона.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Можно ли вернуть товар?</summary>
+        <p class="faq__answer">Да, в течение 14 дней, если товар не был в использовании и сохранена упаковка.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Как узнать, что заявка принята?</summary>
+        <p class="faq__answer">После отправки формы на сайте появится сообщение, а менеджер перезвонит в течение часа.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">Есть ли гарантия?</summary>
+        <p class="faq__answer">На всю технику действует гарантия 12 месяцев.</p>
+      </details>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <section class="site-footer__column">
+        <h2 class="site-footer__title">ShopProject</h2>
+        <p class="site-footer__text">Учебный интернет-магазин цифровой техники и аксессуаров.</p>
+        <p class="site-footer__text">Ежедневно с 10:00 до 20:00</p>
+      </section>
+
+      <nav class="site-footer__column" aria-label="Разделы сайта">
+        <h2 class="site-footer__title">Разделы</h2>
+        <ul class="site-footer__list">
+          <li class="site-footer__item"><a href="index.html#advantages">Преимущества</a></li>
+          <li class="site-footer__item"><a href="index.html#popular">Популярные товары</a></li>
+          <li class="site-footer__item"><a href="index.html#reviews">Отзывы</a></li>
+          <li class="site-footer__item"><a href="contacts.html#faq">Частые вопросы</a></li>
+        </ul>
+      </nav>
+
+      <section class="site-footer__column">
+        <h2 class="site-footer__title">Контакты</h2>
+        <p class="site-footer__text"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+        <p class="site-footer__text"><a href="mailto:info@example.com">info@example.com</a></p>
+      </section>
+    </div>
+
+    <p class="site-footer__copyright">&copy; 2026 ShopProject. Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p>
   </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Наверх">&uarr;</a>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный интернет-магазин цифровой техники и аксессуаров: популярные товары и форма заявки.">
+  <meta name="description" content="Интернет-магазин цифровой техники и аксессуаров: наушники, клавиатуры, колонки. Популярные товары, отзывы и быстрая заявка.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный интернет-магазин цифровой техники и аксессуаров: популярные товары и форма заявки.">
+  <meta property="og:title" content="ShopProject — интернет-магазин цифровой техники">
+  <meta property="og:description" content="Интернет-магазин цифровой техники и аксессуаров: наушники, клавиатуры, колонки. Популярные товары, отзывы и быстрая заявка.">
   <meta property="og:image" content="https://marni52.github.io/kr1-html-css-shop/images/preview.jpg">
-  <title>Учебный интернет-магазин</title>
+  <title>ShopProject — интернет-магазин цифровой техники</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
@@ -20,12 +20,11 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -33,138 +32,161 @@
 
   <main>
     <section class="hero">
-      <h1 class="hero__title">Учебный интернет-магазин</h1>
-      <p class="hero__text">
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина цифровой техники и аксессуаров.
-      </p>
-      <a class="button button--primary hero__button" href="#popular">Перейти к товарам</a>
+      <div class="hero__content">
+        <h1 class="hero__title">Техника и аксессуары для работы и игр</h1>
+        <p class="hero__text">Наушники, клавиатуры, колонки и другие гаджеты с доставкой по Москве за один день.</p>
+        <div class="hero__actions">
+          <a class="button button--primary button--large" href="catalog.html">Перейти в каталог</a>
+          <a class="button button--secondary button--large" href="#popular">Популярные товары</a>
+        </div>
+      </div>
+      <img class="hero__image" src="images/products/store.svg" alt="Витрина магазина ShopProject" width="400" height="300">
     </section>
 
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества проекта</h2>
-
+      <h2 class="section__title">Почему выбирают нас</h2>
       <ul class="advantages-list">
-        <li class="advantages-list__item">понятная HTML-структура;</li>
-        <li class="advantages-list__item">семантические блоки страницы;</li>
-        <li class="advantages-list__item">подключение внешнего CSS-файла;</li>
-        <li class="advantages-list__item">подготовка к разработке многостраничного сайта.</li>
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">🚚</span><span class="advantages-list__title">Доставка за 1 день</span><span class="advantages-list__text">Привезём заказ по Москве на следующий день.</span></li>
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">🛡️</span><span class="advantages-list__title">Гарантия 1 год</span><span class="advantages-list__text">Обменяем товар, если он сломался.</span></li>
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">💳</span><span class="advantages-list__title">Оплата при получении</span><span class="advantages-list__text">Картой или наличными курьеру.</span></li>
+        <li class="advantages-list__item"><span class="advantages-list__icon" aria-hidden="true">💬</span><span class="advantages-list__title">Консультация</span><span class="advantages-list__text">Поможем выбрать товар по телефону.</span></li>
       </ul>
     </section>
 
     <section class="section" id="popular">
       <h2 class="section__title">Популярные товары</h2>
-
       <div class="products-grid">
-        <article class="product-card product-card--featured">
-          <h3 class="product-card__title">Беспроводные наушники</h3>
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge product-card__badge--sale">Скидка</span>
+          <img class="product-card__image" src="images/products/headphones.svg" alt="Беспроводные наушники" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Аудио</p>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Беспроводные наушники</a></h3>
           <p class="product-card__description">Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
-          <p class="product-card__price">Цена: 4 990 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Беспроводные наушники">
-            Заказать
-          </button>
+          <p class="product-card__price">4 990 руб. <del class="product-card__old-price">5 990 руб.</del></p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button" type="button" data-product="Беспроводные наушники">Заказать</button>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card product-card--featured">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <img class="product-card__image" src="images/products/keyboard.svg" alt="Механическая клавиатура" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Периферия</p>
           <h3 class="product-card__title">Механическая клавиатура</h3>
           <p class="product-card__description">Компактная раскладка 75%, подсветка, переключатели Red.</p>
-          <p class="product-card__price">Цена: 6 500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Механическая клавиатура">
-            Заказать
-          </button>
+          <p class="product-card__price">6 500 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button" type="button" data-product="Механическая клавиатура">Заказать</button>
+          </div>
         </article>
 
         <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <img class="product-card__image" src="images/products/speaker.svg" alt="Портативная колонка" width="400" height="300" loading="lazy">
+          <p class="product-card__category">Аудио</p>
           <h3 class="product-card__title">Портативная колонка</h3>
           <p class="product-card__description">Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
-          <p class="product-card__price">Цена: 3 200 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Портативная колонка">
-            Заказать
-          </button>
+          <p class="product-card__price">3 200 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button" type="button" data-product="Портативная колонка">Заказать</button>
+          </div>
         </article>
       </div>
 
-      <p class="success-message" id="success-message" role="status" tabindex="-1" hidden>
-        Форма успешно отправлена!
-      </p>
+      <p class="success-message" id="success-message" role="status" tabindex="-1" hidden>Форма успешно отправлена! Мы свяжемся с вами в течение часа.</p>
     </section>
 
-    <aside class="aside-info">
-      <h2 class="aside-info__title">Информация для студентов</h2>
-      <p class="aside-info__text">
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
-      </p>
+    <aside class="promo">
+      <div class="promo__content">
+        <h2 class="promo__title">Скидка 10% на первый заказ</h2>
+        <p class="promo__text">Назовите менеджеру промокод <strong>FIRST10</strong> при оформлении заявки.</p>
+      </div>
+      <a class="button button--primary" href="order.html">Оформить заявку</a>
     </aside>
+
+    <section class="section" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+      <div class="reviews">
+        <figure class="review">
+          <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
+          <blockquote class="review__text">Наушники пришли на следующий день, шумоподавление отличное.</blockquote>
+          <figcaption><cite class="review__author">Мария</cite></figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__rating" role="img" aria-label="Оценка 5 из 5">★★★★★</p>
+          <blockquote class="review__text">Помогли выбрать клавиатуру под мои задачи, очень доволен.</blockquote>
+          <figcaption><cite class="review__author">Денис</cite></figcaption>
+        </figure>
+        <figure class="review">
+          <p class="review__rating" role="img" aria-label="Оценка 4 из 5">★★★★☆</p>
+          <blockquote class="review__text">Колонка громкая, но хотелось бы больше цветов на выбор.</blockquote>
+          <figcaption><cite class="review__author">Ольга</cite></figcaption>
+        </figure>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer" id="contacts">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+    <div class="site-footer__inner">
+      <section class="site-footer__column">
+        <h2 class="site-footer__title">ShopProject</h2>
+        <p class="site-footer__text">Учебный интернет-магазин цифровой техники и аксессуаров.</p>
+        <p class="site-footer__text">Ежедневно с 10:00 до 20:00</p>
+      </section>
+
+      <nav class="site-footer__column" aria-label="Разделы сайта">
+        <h2 class="site-footer__title">Разделы</h2>
+        <ul class="site-footer__list">
+          <li class="site-footer__item"><a href="index.html#advantages">Преимущества</a></li>
+          <li class="site-footer__item"><a href="index.html#popular">Популярные товары</a></li>
+          <li class="site-footer__item"><a href="index.html#reviews">Отзывы</a></li>
+          <li class="site-footer__item"><a href="contacts.html#faq">Частые вопросы</a></li>
+        </ul>
+      </nav>
+
+      <section class="site-footer__column">
+        <h2 class="site-footer__title">Контакты</h2>
+        <p class="site-footer__text"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+        <p class="site-footer__text"><a href="mailto:info@example.com">info@example.com</a></p>
+      </section>
+    </div>
+
+    <p class="site-footer__copyright">&copy; 2026 ShopProject. Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p>
   </footer>
+
+  <a class="back-to-top" href="#top" aria-label="Наверх">&uarr;</a>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <p class="order-dialog__product" id="order-dialog-product"></p>
 
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
+        <label class="order-form__label" for="order-name">Имя <span class="order-form__required">*</span></label>
+        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
+        <label class="order-form__label" for="order-email">E-mail <span class="order-form__required">*</span></label>
+        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+        <label class="order-form__label" for="order-phone">Телефон <span class="order-form__required">*</span></label>
+        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" aria-describedby="order-phone-hint" required>
+        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
+        <label class="order-form__label" for="order-date">Удобная дата связи</label>
+        <input class="order-form__input" id="order-date" name="date" type="date">
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <label class="order-form__label" for="order-topic">Тема заявки <span class="order-form__required">*</span></label>
         <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="product">Заказ товара</option>
@@ -175,25 +197,13 @@
 
       <div class="order-form__field">
         <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea
-          class="order-form__textarea"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
+        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="3" placeholder="Укажите дополнительную информацию"></textarea>
       </div>
 
-      <div class="order-form__field order-form__field--checkbox">
-        <label class="order-form__checkbox-label">
-          <input
-            class="order-form__checkbox"
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
-            required
-          >
-          Я согласен на обработку данных
+      <div class="order-form__field">
+        <label class="order-form__option">
+          <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" required>
+          Я согласен на обработку персональных данных
         </label>
       </div>
 
