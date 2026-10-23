@@ -66,6 +66,7 @@ GitHub Pages: https://marni52.github.io/kr1-html-css-shop/
 - Практическая работа 5: создана многостраничная структура сайта, добавлены единая навигация и якорные ссылки.
 - Практическая работа 6: добавлены Flexbox-навигация и Grid-раскладка карточек и каталога.
 - Исправления по итогам проверки: кнопка «Перейти к форме» открывает форму заявки, сообщение об успешной отправке выводится рядом с товарами, подвал выровнен по контейнеру, добавлен favicon.
+- Практическая работа 7: выполнен рефакторинг CSS-стилей по методологии БЭМ.
 
 ## Реализованные элементы интерфейса
 
@@ -103,3 +104,22 @@ GitHub Pages: https://marni52.github.io/kr1-html-css-shop/
 - CSS Grid для сетки карточек (`.products-grid`, `repeat(3, 1fr)`);
 - CSS Grid для страницы каталога с фильтрами и списком товаров (`grid-template-areas: "filters products"`);
 - CSS Grid для формы фильтров.
+
+## БЭМ-структура проекта
+
+В проекте используются следующие БЭМ-блоки:
+
+- `site-header` — шапка сайта (`site-header__inner`, `site-header__logo`);
+- `site-nav` — основная навигация (`site-nav__list`, `site-nav__item`, `site-nav__link`, модификатор `site-nav__link--active`);
+- `breadcrumbs` — хлебные крошки (`breadcrumbs__link`, `breadcrumbs__current`);
+- `hero` — первый экран главной страницы;
+- `section` — раздел страницы (`section__title`, `section__text`);
+- `products-grid` — сетка товаров;
+- `product-card` — карточка товара (`__title`, `__description`, `__price`, `__button`, модификаторы `--featured`, `--discount`);
+- `catalog-layout`, `catalog-filters`, `catalog-products`, `filters-form` — страница каталога;
+- `order-dialog` — модальное окно заявки;
+- `order-form` — форма заявки (`__field`, `__label`, `__input`, `__select`, `__textarea`, `__hint`, `__actions`);
+- `button` — кнопка (модификаторы `--primary`, `--secondary`, `--disabled`);
+- `site-footer` — подвал сайта.
+
+id используются только для якорных ссылок и JavaScript, в CSS стилизация идёт только через классы, inline-стилей нет.
