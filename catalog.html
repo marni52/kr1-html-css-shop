@@ -1,307 +1,141 @@
 <!DOCTYPE html>
-<!-- Язык страницы - русский -->
 <html lang="ru">
-<!-- head - служебная информация о странице, на экране не видна -->
 <head>
-  <!-- Кодировка UTF-8, чтобы правильно отображались русские буквы -->
   <meta charset="UTF-8">
-  <!-- Ширина страницы равна ширине экрана устройства -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Краткое описание страницы для поисковиков -->
-  <meta name="description" content="Каталог ShopProject: наушники, клавиатуры, мыши, колонки, аккумуляторы и веб-камеры с ценами и фильтрами.">
-  <!-- Open Graph: как выглядит ссылка на сайт в мессенджерах -->
+  <meta name="description" content="Каталог товаров учебного интернет-магазина: наушники, клавиатуры, колонки и другие аксессуары.">
   <meta property="og:type" content="website">
-  <!-- Заголовок для превью ссылки -->
-  <meta property="og:title" content="Каталог товаров — ShopProject">
-  <!-- Описание для превью ссылки -->
-  <meta property="og:description" content="Каталог ShopProject: наушники, клавиатуры, мыши, колонки, аккумуляторы и веб-камеры с ценами и фильтрами.">
-  <!-- Картинка для превью ссылки -->
+  <meta property="og:title" content="Каталог товаров — Учебный интернет-магазин">
+  <meta property="og:description" content="Каталог товаров учебного интернет-магазина: наушники, клавиатуры, колонки и другие аксессуары.">
   <meta property="og:image" content="https://marni52.github.io/kr1-html-css-shop/images/preview.jpg">
-  <!-- Название вкладки браузера (у каждой страницы своё) -->
-  <title>Каталог товаров — ShopProject</title>
-  <!-- Иконка сайта во вкладке -->
+  <title>Каталог товаров — Учебный интернет-магазин</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <!-- Подключение общего файла стилей -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<!-- body - всё, что видно на экране -->
 <body>
-  <!-- Шапка сайта; класс site-header делает её «липкой» (position: sticky) -->
-  <header class="site-header">
-    <!-- Внутренний контейнер: логотип и меню в одну строку через Flexbox -->
-    <div class="site-header__inner">
-      <!-- Логотип - ссылка на главную страницу -->
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
 
-      <!-- Основное меню; aria-label объясняет назначение блока экранному диктору -->
       <nav class="site-nav" aria-label="Основная навигация">
-        <!-- Список пунктов меню; у текущей страницы модификатор site-nav__link--active и aria-current="page" -->
         <ul class="site-nav__list">
-        <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-        <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
-        <li class="site-nav__item"><a class="site-nav__link" href="product.html">Хит продаж</a></li>
-        <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
-        <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Основное содержимое страницы -->
   <main>
-    <!-- Хлебные крошки: путь от главной до текущей страницы -->
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <!-- Ссылки на страницы выше по уровню -->
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <!-- Текущая страница - не ссылка, а span -->
-      <span class="breadcrumbs__current">Каталог</span>
+      <a href="index.html">Главная</a>
+      <span>Каталог</span>
     </nav>
 
-    <!-- Заголовок страницы -->
     <section class="section">
-      <!-- h1 - главный заголовок страницы -->
-      <h1 class="section__title">Каталог товаров</h1>
-      <!-- Описание каталога -->
-      <p class="section__text">Выберите товар и оформите заявку - менеджер перезвонит и уточнит детали доставки.</p>
+      <h1>Каталог товаров</h1>
+      <p>
+        На этой странице представлен учебный каталог товаров.
+        В дальнейшем здесь будут добавлены фильтры, сортировка и более
+        подробные карточки.
+      </p>
     </section>
 
-    <!-- Макет каталога через Grid: grid-template-areas "filters products" -->
     <section class="catalog-layout">
-      <!-- Боковая колонка с фильтрами; position: sticky - прилипает при прокрутке -->
       <aside class="catalog-filters">
-        <!-- Заголовок фильтров -->
-        <h2 class="catalog-filters__title">Фильтры</h2>
+        <h2>Фильтры</h2>
 
-        <!-- Форма фильтров (пока статическая разметка); method="get" - параметры попадут в адрес -->
         <form class="filters-form" action="#" method="get">
-          <!-- fieldset группирует связанные поля -->
-          <fieldset class="filters-form__group">
-            <!-- legend - заголовок группы -->
-            <legend class="filters-form__legend">Категория</legend>
-            <!-- Флажки категорий; input внутри label -->
-            <label class="filters-form__label"><input class="filters-form__checkbox" type="checkbox" name="category" value="audio"> Аудио</label>
-            <label class="filters-form__label"><input class="filters-form__checkbox" type="checkbox" name="category" value="peripherals"> Периферия</label>
-            <label class="filters-form__label"><input class="filters-form__checkbox" type="checkbox" name="category" value="accessories"> Аксессуары</label>
+          <fieldset>
+            <legend>Категория</legend>
+
+            <label>
+              <input type="checkbox" name="category" value="all">
+              Все товары
+            </label>
+
+            <label>
+              <input type="checkbox" name="category" value="popular">
+              Популярные
+            </label>
+
+            <label>
+              <input type="checkbox" name="category" value="new">
+              Новинки
+            </label>
           </fieldset>
 
-          <!-- Группа «Цена» -->
-          <fieldset class="filters-form__group">
-            <!-- Заголовок группы -->
-            <legend class="filters-form__legend">Цена, руб.</legend>
-            <!-- Подпись и поле «от» -->
-            <label class="filters-form__label" for="price-from">От</label>
-            <!-- type="number" - только числа, min="0" - не меньше нуля -->
-            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
-            <!-- Подпись и поле «до» -->
-            <label class="filters-form__label" for="price-to">До</label>
-            <!-- Поле «до» -->
-            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="10000">
+          <fieldset>
+            <legend>Цена</legend>
+
+            <label for="price-from">От</label>
+            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+
+            <label for="price-to">До</label>
+            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
 
-          <!-- Группа «Наличие» -->
-          <fieldset class="filters-form__group">
-            <!-- Заголовок группы -->
-            <legend class="filters-form__legend">Наличие</legend>
-            <!-- Флажок «только в наличии» -->
-            <label class="filters-form__label"><input class="filters-form__checkbox" type="checkbox" name="in-stock" value="1"> Только в наличии</label>
-            <!-- Флажок «со скидкой» -->
-            <label class="filters-form__label"><input class="filters-form__checkbox" type="checkbox" name="sale" value="1"> Со скидкой</label>
-          </fieldset>
-
-          <!-- Кнопка применения фильтров -->
-          <button class="button button--primary" type="submit">Применить</button>
-          <!-- type="reset" - сбрасывает все поля формы -->
-          <button class="button button--secondary" type="reset">Сбросить</button>
+          <button class="button" type="submit">Применить</button>
         </form>
       </aside>
 
-      <!-- Правая колонка со списком товаров -->
       <section class="catalog-products">
-        <!-- Заголовок и сортировка в одну строку (Flexbox) -->
-        <div class="catalog-products__header">
-          <!-- Заголовок списка -->
-          <h2 class="catalog-products__title">Все товары (6)</h2>
-          <!-- Подпись для списка сортировки, видна только экранному диктору через aria-label -->
-          <select class="catalog-products__sort" name="sort" aria-label="Сортировка">
-            <option value="popular">Сначала популярные</option>
-            <option value="cheap">Сначала дешёвые</option>
-            <option value="expensive">Сначала дорогие</option>
-          </select>
-        </div>
+        <h2>Список товаров</h2>
 
-        <!-- Сетка карточек товаров -->
         <div class="products-grid">
-          <!-- Карточка товара: блок product-card с модификатором product-card--discount -->
-          <article class="product-card product-card--discount">
-            <!-- Бейдж «Скидка»: position: absolute в правом верхнем углу карточки -->
-            <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
-            <img class="product-card__image" src="images/products/headphones.svg" alt="Беспроводные наушники" width="400" height="300" loading="lazy">
-            <!-- Категория товара -->
-            <p class="product-card__category">Аудио</p>
-            <!-- Название товара - ссылка на страницу товара -->
-            <h3 class="product-card__title"><a class="product-card__link" href="product.html">Беспроводные наушники</a></h3>
-            <!-- Краткое описание -->
-            <p class="product-card__description">Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
-            <!-- Цена; старая цена перечёркнута (del - удалённый текст) -->
-            <p class="product-card__price">4 990 руб. <del class="product-card__old-price">5 990 руб.</del></p>
-            <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
-            <div class="product-card__actions">
-              <!-- Ссылка на страницу заявки; ?product= передаёт выбранный товар -->
-              <a class="button button--primary product-card__button" href="order.html?product=headphones">Заказать</a>
-              <!-- Ссылка на подробную страницу товара -->
-              <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
-            </div>
-          </article>
-
-          <!-- Карточка товара: блок product-card с модификатором product-card--featured -->
-          <article class="product-card product-card--featured">
-            <!-- Бейдж «Хит»: position: absolute в правом верхнем углу карточки -->
-            <span class="product-card__badge product-card__badge--hit">Хит</span>
-            <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
-            <img class="product-card__image" src="images/products/keyboard.svg" alt="Механическая клавиатура" width="400" height="300" loading="lazy">
-            <!-- Категория товара -->
-            <p class="product-card__category">Периферия</p>
-            <!-- Название товара -->
-            <h3 class="product-card__title">Механическая клавиатура</h3>
-            <!-- Краткое описание -->
-            <p class="product-card__description">Компактная раскладка 75%, подсветка, переключатели Red.</p>
-            <!-- Цена -->
-            <p class="product-card__price">6 500 руб.</p>
-            <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
-            <div class="product-card__actions">
-              <!-- Ссылка на страницу заявки; ?product= передаёт выбранный товар -->
-              <a class="button button--primary product-card__button" href="order.html?product=keyboard">Заказать</a>
-            </div>
-          </article>
-
-          <!-- Карточка товара: блок product-card -->
           <article class="product-card">
-            <!-- Бейдж «Новинка»: position: absolute в правом верхнем углу карточки -->
-            <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
-            <img class="product-card__image" src="images/products/speaker.svg" alt="Портативная колонка" width="400" height="300" loading="lazy">
-            <!-- Категория товара -->
-            <p class="product-card__category">Аудио</p>
-            <!-- Название товара -->
-            <h3 class="product-card__title">Портативная колонка</h3>
-            <!-- Краткое описание -->
-            <p class="product-card__description">Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
-            <!-- Цена -->
-            <p class="product-card__price">3 200 руб.</p>
-            <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
-            <div class="product-card__actions">
-              <!-- Ссылка на страницу заявки; ?product= передаёт выбранный товар -->
-              <a class="button button--primary product-card__button" href="order.html?product=speaker">Заказать</a>
-            </div>
+            <h3>Беспроводные наушники</h3>
+            <p>Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
+            <p>Цена: 4 990 руб.</p>
+            <a class="button" href="index.html#popular">Подробнее</a>
           </article>
 
-          <!-- Карточка товара: блок product-card -->
           <article class="product-card">
-            <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
-            <img class="product-card__image" src="images/products/mouse.svg" alt="Игровая мышь" width="400" height="300" loading="lazy">
-            <!-- Категория товара -->
-            <p class="product-card__category">Периферия</p>
-            <!-- Название товара -->
-            <h3 class="product-card__title">Игровая мышь</h3>
-            <!-- Краткое описание -->
-            <p class="product-card__description">Сенсор 26 000 DPI, вес 63 г, беспроводное подключение.</p>
-            <!-- Цена -->
-            <p class="product-card__price">3 900 руб.</p>
-            <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
-            <div class="product-card__actions">
-              <!-- Ссылка на страницу заявки; ?product= передаёт выбранный товар -->
-              <a class="button button--primary product-card__button" href="order.html?product=mouse">Заказать</a>
-            </div>
+            <h3>Механическая клавиатура</h3>
+            <p>Компактная раскладка 75%, подсветка, переключатели Red.</p>
+            <p>Цена: 6 500 руб.</p>
+            <a class="button" href="index.html#popular">Подробнее</a>
           </article>
 
-          <!-- Карточка товара: блок product-card с модификатором product-card--discount -->
-          <article class="product-card product-card--discount">
-            <!-- Бейдж «Скидка»: position: absolute в правом верхнем углу карточки -->
-            <span class="product-card__badge product-card__badge--sale">Скидка</span>
-            <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
-            <img class="product-card__image" src="images/products/powerbank.svg" alt="Внешний аккумулятор" width="400" height="300" loading="lazy">
-            <!-- Категория товара -->
-            <p class="product-card__category">Аксессуары</p>
-            <!-- Название товара -->
-            <h3 class="product-card__title">Внешний аккумулятор</h3>
-            <!-- Краткое описание -->
-            <p class="product-card__description">Ёмкость 20 000 мА·ч, быстрая зарядка 65 Вт, USB-C.</p>
-            <!-- Цена; старая цена перечёркнута (del - удалённый текст) -->
-            <p class="product-card__price">2 700 руб. <del class="product-card__old-price">3 200 руб.</del></p>
-            <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
-            <div class="product-card__actions">
-              <!-- Ссылка на страницу заявки; ?product= передаёт выбранный товар -->
-              <a class="button button--primary product-card__button" href="order.html?product=powerbank">Заказать</a>
-            </div>
+          <article class="product-card">
+            <h3>Портативная колонка</h3>
+            <p>Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
+            <p>Цена: 3 200 руб.</p>
+            <a class="button" href="index.html#popular">Подробнее</a>
           </article>
 
-          <!-- Карточка товара: блок product-card с модификатором product-card--out-of-stock -->
-          <article class="product-card product-card--out-of-stock">
-            <!-- Картинка товара; alt - описание для тех, у кого картинка не загрузилась -->
-            <img class="product-card__image" src="images/products/webcam.svg" alt="Веб-камера Full HD" width="400" height="300" loading="lazy">
-            <!-- Категория товара -->
-            <p class="product-card__category">Периферия</p>
-            <!-- Название товара -->
-            <h3 class="product-card__title">Веб-камера Full HD</h3>
-            <!-- Краткое описание -->
-            <p class="product-card__description">1080p 60 к/с, автофокус, встроенный стереомикрофон.</p>
-            <!-- Цена -->
-            <p class="product-card__price">3 500 руб.</p>
-            <!-- Кнопки карточки, прижаты к низу (margin-top: auto) -->
-            <div class="product-card__actions">
-              <!-- Товара нет: кнопка отключена атрибутом disabled -->
-              <button class="button button--primary product-card__button" type="button" disabled>Нет в наличии</button>
-            </div>
+          <article class="product-card">
+            <h3>Игровая мышь</h3>
+            <p>Сенсор 26 000 DPI, вес 63 г, беспроводное подключение.</p>
+            <p>Цена: 3 900 руб.</p>
+            <a class="button" href="index.html#popular">Подробнее</a>
+          </article>
+
+          <article class="product-card">
+            <h3>Внешний аккумулятор</h3>
+            <p>Ёмкость 20 000 мА·ч, быстрая зарядка 65 Вт, USB-C.</p>
+            <p>Цена: 2 700 руб.</p>
+            <a class="button" href="index.html#popular">Подробнее</a>
+          </article>
+
+          <article class="product-card">
+            <h3>Веб-камера Full HD</h3>
+            <p>1080p 60 к/с, автофокус, встроенный стереомикрофон.</p>
+            <p>Цена: 3 500 руб.</p>
+            <a class="button" href="index.html#popular">Подробнее</a>
           </article>
         </div>
       </section>
     </section>
   </main>
 
-  <!-- Подвал сайта; id="contacts" - цель якорной ссылки index.html#contacts -->
-  <footer class="site-footer" id="contacts">
-    <!-- Три колонки подвала через Grid -->
-    <div class="site-footer__inner">
-      <!-- Колонка «О магазине» -->
-      <section class="site-footer__column">
-        <!-- Заголовок колонки -->
-        <h2 class="site-footer__title">ShopProject</h2>
-        <!-- Описание магазина -->
-        <p class="site-footer__text">Учебный интернет-магазин цифровой техники и аксессуаров.</p>
-        <!-- Режим работы -->
-        <p class="site-footer__text">Ежедневно с 10:00 до 20:00</p>
-      </section>
-
-      <!-- Колонка с навигацией по разделам главной страницы -->
-      <nav class="site-footer__column" aria-label="Разделы сайта">
-        <!-- Заголовок колонки -->
-        <h2 class="site-footer__title">Разделы</h2>
-        <!-- Список якорных ссылок на разделы главной -->
-        <ul class="site-footer__list">
-          <li class="site-footer__item"><a href="index.html#advantages">Преимущества</a></li>
-          <li class="site-footer__item"><a href="index.html#popular">Популярные товары</a></li>
-          <li class="site-footer__item"><a href="index.html#reviews">Отзывы</a></li>
-          <li class="site-footer__item"><a href="contacts.html#faq">Частые вопросы</a></li>
-        </ul>
-      </nav>
-
-      <!-- Колонка с контактами -->
-      <section class="site-footer__column">
-        <!-- Заголовок колонки -->
-        <h2 class="site-footer__title">Контакты</h2>
-        <!-- Телефон: tel: открывает звонок на телефоне -->
-        <p class="site-footer__text"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
-        <!-- Почта: mailto: открывает почтовую программу -->
-        <p class="site-footer__text"><a href="mailto:info@example.com">info@example.com</a></p>
-      </section>
-    </div>
-
-    <!-- Строка с копирайтом; &copy; - значок © -->
-    <p class="site-footer__copyright">&copy; 2026 ShopProject. Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p>
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
-
-  <!-- Кнопка «Наверх»: position: fixed держит её в правом нижнем углу окна; #top - начало страницы -->
-  <a class="back-to-top" href="#top" aria-label="Наверх">&uarr;</a>
 </body>
 </html>
