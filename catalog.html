@@ -21,6 +21,7 @@
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html" aria-current="page">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
@@ -87,46 +88,49 @@
         <h2 class="catalog-products__title">Список товаров</h2>
 
         <div class="products-grid">
-          <article class="product-card">
+          <article class="product-card product-card--discount">
+            <span class="product-card__badge">Скидка</span>
             <h3 class="product-card__title">Беспроводные наушники</h3>
             <p class="product-card__description">Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
-            <p class="product-card__price">Цена: 4 990 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <p class="product-card__price">Цена: 4 990 руб. <s class="product-card__old-price">5 990 руб.</s></p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Механическая клавиатура</h3>
             <p class="product-card__description">Компактная раскладка 75%, подсветка, переключатели Red.</p>
             <p class="product-card__price">Цена: 6 500 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <a class="button button--primary product-card__button" href="order.html">Заказать</a>
           </article>
 
           <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">Новинка</span>
             <h3 class="product-card__title">Портативная колонка</h3>
             <p class="product-card__description">Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
             <p class="product-card__price">Цена: 3 200 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <a class="button button--primary product-card__button" href="order.html">Заказать</a>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Игровая мышь</h3>
             <p class="product-card__description">Сенсор 26 000 DPI, вес 63 г, беспроводное подключение.</p>
             <p class="product-card__price">Цена: 3 900 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <a class="button button--primary product-card__button" href="order.html">Заказать</a>
           </article>
 
-          <article class="product-card">
+          <article class="product-card product-card--discount">
+            <span class="product-card__badge">Скидка</span>
             <h3 class="product-card__title">Внешний аккумулятор</h3>
             <p class="product-card__description">Ёмкость 20 000 мА·ч, быстрая зарядка 65 Вт, USB-C.</p>
-            <p class="product-card__price">Цена: 2 700 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <p class="product-card__price">Цена: 2 700 руб. <s class="product-card__old-price">3 200 руб.</s></p>
+            <a class="button button--primary product-card__button" href="order.html">Заказать</a>
           </article>
 
           <article class="product-card">
             <h3 class="product-card__title">Веб-камера Full HD</h3>
             <p class="product-card__description">1080p 60 к/с, автофокус, встроенный стереомикрофон.</p>
             <p class="product-card__price">Цена: 3 500 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+            <a class="button button--primary product-card__button" href="order.html">Заказать</a>
           </article>
         </div>
       </section>
@@ -137,5 +141,7 @@
     <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="back-to-top" href="#">Наверх</a>
 </body>
 </html>

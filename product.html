@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Карточка товара: беспроводные наушники, описание, характеристики и цена.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Беспроводные наушники — Учебный интернет-магазин">
+  <meta property="og:description" content="Карточка товара: беспроводные наушники, описание, характеристики и цена.">
+  <meta property="og:image" content="https://marni52.github.io/kr1-html-css-shop/images/preview.jpg">
+  <title>Беспроводные наушники — Учебный интернет-магазин</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+      <span class="breadcrumbs__current">Беспроводные наушники</span>
+    </nav>
+
+    <article class="product">
+      <div class="product__gallery">
+        <span class="product__badge">Скидка</span>
+        <img class="product__image" src="images/product-headphones.svg" alt="Беспроводные наушники" width="480" height="360">
+      </div>
+
+      <div class="product__info">
+        <h1 class="product__title">Беспроводные наушники</h1>
+        <p class="product__category">Категория: аудио</p>
+        <p class="product__price">4 990 руб. <s class="product__old-price">5 990 руб.</s></p>
+        <p class="product__text">
+          Полноразмерные наушники с активным шумоподавлением. Подходят для учёбы,
+          работы и поездок, держат заряд до 30 часов.
+        </p>
+        <ul class="product__features">
+          <li>активное шумоподавление;</li>
+          <li>подключение по Bluetooth и по кабелю;</li>
+          <li>быстрая зарядка через USB-C.</li>
+        </ul>
+        <a class="button button--primary" href="order.html">Оформить заявку</a>
+      </div>
+    </article>
+
+    <section class="section">
+      <h2 class="section__title">Характеристики</h2>
+
+      <table class="product-table">
+        <caption class="product-table__caption">Характеристики товара</caption>
+        <thead>
+          <tr>
+            <th class="product-table__cell" scope="col">Параметр</th>
+            <th class="product-table__cell" scope="col">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-table__cell">Категория</td>
+            <td class="product-table__cell">Наушники</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Подключение</td>
+            <td class="product-table__cell">Bluetooth 5.3, кабель 3,5 мм</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Шумоподавление</td>
+            <td class="product-table__cell">Активное</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Время работы</td>
+            <td class="product-table__cell">До 30 часов</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Вес</td>
+            <td class="product-table__cell">250 г</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Цена</td>
+            <td class="product-table__cell">4 990 руб.</td>
+          </tr>
+          <tr>
+            <td class="product-table__cell">Наличие</td>
+            <td class="product-table__cell">В наличии</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <aside class="aside-info">
+      <h2 class="aside-info__title">Доставка и оплата</h2>
+      <p class="aside-info__text">
+        Доставка по Москве курьером на следующий день. Оплата при получении картой или наличными.
+      </p>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <a class="back-to-top" href="#">Наверх</a>
+</body>
+</html>

@@ -22,6 +22,7 @@
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заявку</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
@@ -57,16 +58,20 @@
       <h2 class="section__title">Популярные товары</h2>
 
       <div class="products-grid">
-        <article class="product-card product-card--featured">
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge">Скидка</span>
           <h3 class="product-card__title">Беспроводные наушники</h3>
           <p class="product-card__description">Bluetooth 5.3, активное шумоподавление, до 30 часов работы.</p>
-          <p class="product-card__price">Цена: 4 990 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Беспроводные наушники">
-            Заказать
-          </button>
+          <p class="product-card__price">Цена: 4 990 руб. <s class="product-card__old-price">5 990 руб.</s></p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button" type="button" data-product="Беспроводные наушники">
+              Заказать
+            </button>
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+          </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card product-card--featured">
           <h3 class="product-card__title">Механическая клавиатура</h3>
           <p class="product-card__description">Компактная раскладка 75%, подсветка, переключатели Red.</p>
           <p class="product-card__price">Цена: 6 500 руб.</p>
@@ -76,6 +81,7 @@
         </article>
 
         <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
           <h3 class="product-card__title">Портативная колонка</h3>
           <p class="product-card__description">Защита от воды IPX7, мощность 20 Вт, до 12 часов работы.</p>
           <p class="product-card__price">Цена: 3 200 руб.</p>
@@ -104,6 +110,8 @@
     <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="back-to-top" href="#">Наверх</a>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
