@@ -1,23 +1,41 @@
 <!DOCTYPE html>
+<!-- Язык страницы - русский -->
 <html lang="ru">
+<!-- head - служебная информация о странице, на экране не видна -->
 <head>
+  <!-- Кодировка UTF-8, чтобы правильно отображались русские буквы -->
   <meta charset="UTF-8">
+  <!-- Ширина страницы равна ширине экрана устройства -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Краткое описание страницы для поисковиков -->
   <meta name="description" content="Контакты ShopProject: телефон, e-mail, адрес и режим работы, ответы на частые вопросы и форма заявки.">
+  <!-- Open Graph: как выглядит ссылка на сайт в мессенджерах -->
   <meta property="og:type" content="website">
+  <!-- Заголовок для превью ссылки -->
   <meta property="og:title" content="Контакты — ShopProject">
+  <!-- Описание для превью ссылки -->
   <meta property="og:description" content="Контакты ShopProject: телефон, e-mail, адрес и режим работы, ответы на частые вопросы и форма заявки.">
+  <!-- Картинка для превью ссылки -->
   <meta property="og:image" content="https://marni52.github.io/kr1-html-css-shop/images/preview.jpg">
+  <!-- Название вкладки браузера (у каждой страницы своё) -->
   <title>Контакты — ShopProject</title>
+  <!-- Иконка сайта во вкладке -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <!-- Подключение общего файла стилей -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- body - всё, что видно на экране -->
 <body>
+  <!-- Шапка сайта; класс site-header делает её «липкой» (position: sticky) -->
   <header class="site-header">
+    <!-- Внутренний контейнер: логотип и меню в одну строку через Flexbox -->
     <div class="site-header__inner">
+      <!-- Логотип - ссылка на главную страницу -->
       <a class="site-header__logo" href="index.html">ShopProject</a>
 
+      <!-- Основное меню; aria-label объясняет назначение блока экранному диктору -->
       <nav class="site-nav" aria-label="Основная навигация">
+        <!-- Список пунктов меню; у текущей страницы модификатор site-nav__link--active и aria-current="page" -->
         <ul class="site-nav__list">
         <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
@@ -29,65 +47,105 @@
     </div>
   </header>
 
+  <!-- Основное содержимое страницы -->
   <main>
+    <!-- Хлебные крошки: путь от главной до текущей страницы -->
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <!-- Ссылки на страницы выше по уровню -->
       <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <!-- Текущая страница - не ссылка, а span -->
       <span class="breadcrumbs__current">Контакты</span>
     </nav>
 
+    <!-- Раздел с контактами -->
     <section class="section">
+      <!-- h1 страницы -->
       <h1 class="section__title">Контакты</h1>
+      <!-- Пояснение -->
       <p class="section__text">Звоните, пишите или приезжайте в пункт выдачи.</p>
+      <!-- Контакты сеткой в 4 колонки -->
       <ul class="contacts-list">
+        <!-- Телефон -->
         <li class="contacts-list__item"><span class="contacts-list__label">Телефон</span><a class="contacts-list__value" href="tel:+79000000000">+7 (900) 000-00-00</a></li>
+        <!-- Почта -->
         <li class="contacts-list__item"><span class="contacts-list__label">E-mail</span><a class="contacts-list__value" href="mailto:info@example.com">info@example.com</a></li>
+        <!-- Адрес; address - тег для контактной информации -->
         <li class="contacts-list__item"><span class="contacts-list__label">Адрес</span><address class="contacts-list__value">г. Москва, пр-т Вернадского, 78</address></li>
+        <!-- Режим работы -->
         <li class="contacts-list__item"><span class="contacts-list__label">Режим работы</span><span class="contacts-list__value">Ежедневно 10:00-20:00</span></li>
       </ul>
     </section>
 
+    <!-- Обратная связь -->
     <section class="section" id="feedback">
+      <!-- Заголовок -->
       <h2 class="section__title">Обратная связь</h2>
+      <!-- Пояснение -->
       <p class="section__text">Оставьте заявку - мы перезвоним и ответим на вопросы.</p>
+      <!-- Ссылка на страницу заявки -->
       <a class="button button--primary" href="order.html">Оформить заявку</a>
+      <!-- Ссылка на главную с #order - там сразу откроется модальное окно -->
       <a class="button button--secondary" href="index.html#order">Быстрая заявка</a>
     </section>
 
+    <!-- Частые вопросы; id - цель якоря contacts.html#faq -->
     <section class="section faq" id="faq">
+      <!-- Заголовок -->
       <h2 class="section__title">Частые вопросы</h2>
 
+      <!-- details - раскрывающийся блок без JavaScript; summary - заголовок, по клику открывает ответ -->
       <details class="faq__item">
+        <!-- Вопрос -->
         <summary class="faq__question">Сколько стоит доставка?</summary>
+        <!-- Ответ -->
         <p class="faq__answer">Курьером по Москве - бесплатно, почтой - от 350 рублей в зависимости от региона.</p>
       </details>
 
+      <!-- details - раскрывающийся блок без JavaScript; summary - заголовок, по клику открывает ответ -->
       <details class="faq__item">
+        <!-- Вопрос -->
         <summary class="faq__question">Можно ли вернуть товар?</summary>
+        <!-- Ответ -->
         <p class="faq__answer">Да, в течение 14 дней, если товар не был в использовании и сохранена упаковка.</p>
       </details>
 
+      <!-- details - раскрывающийся блок без JavaScript; summary - заголовок, по клику открывает ответ -->
       <details class="faq__item">
+        <!-- Вопрос -->
         <summary class="faq__question">Как узнать, что заявка принята?</summary>
+        <!-- Ответ -->
         <p class="faq__answer">После отправки формы на сайте появится сообщение, а менеджер перезвонит в течение часа.</p>
       </details>
 
+      <!-- details - раскрывающийся блок без JavaScript; summary - заголовок, по клику открывает ответ -->
       <details class="faq__item">
+        <!-- Вопрос -->
         <summary class="faq__question">Есть ли гарантия?</summary>
+        <!-- Ответ -->
         <p class="faq__answer">На всю технику действует гарантия 12 месяцев.</p>
       </details>
     </section>
   </main>
 
+  <!-- Подвал сайта; id="contacts" - цель якорной ссылки index.html#contacts -->
   <footer class="site-footer" id="contacts">
+    <!-- Три колонки подвала через Grid -->
     <div class="site-footer__inner">
+      <!-- Колонка «О магазине» -->
       <section class="site-footer__column">
+        <!-- Заголовок колонки -->
         <h2 class="site-footer__title">ShopProject</h2>
+        <!-- Описание магазина -->
         <p class="site-footer__text">Учебный интернет-магазин цифровой техники и аксессуаров.</p>
+        <!-- Режим работы -->
         <p class="site-footer__text">Ежедневно с 10:00 до 20:00</p>
       </section>
 
+      <!-- Колонка с навигацией по разделам главной страницы -->
       <nav class="site-footer__column" aria-label="Разделы сайта">
+        <!-- Заголовок колонки -->
         <h2 class="site-footer__title">Разделы</h2>
+        <!-- Список якорных ссылок на разделы главной -->
         <ul class="site-footer__list">
           <li class="site-footer__item"><a href="index.html#advantages">Преимущества</a></li>
           <li class="site-footer__item"><a href="index.html#popular">Популярные товары</a></li>
@@ -96,16 +154,22 @@
         </ul>
       </nav>
 
+      <!-- Колонка с контактами -->
       <section class="site-footer__column">
+        <!-- Заголовок колонки -->
         <h2 class="site-footer__title">Контакты</h2>
+        <!-- Телефон: tel: открывает звонок на телефоне -->
         <p class="site-footer__text"><a href="tel:+79000000000">+7 (900) 000-00-00</a></p>
+        <!-- Почта: mailto: открывает почтовую программу -->
         <p class="site-footer__text"><a href="mailto:info@example.com">info@example.com</a></p>
       </section>
     </div>
 
+    <!-- Строка с копирайтом; &copy; - значок © -->
     <p class="site-footer__copyright">&copy; 2026 ShopProject. Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p>
   </footer>
 
+  <!-- Кнопка «Наверх»: position: fixed держит её в правом нижнем углу окна; #top - начало страницы -->
   <a class="back-to-top" href="#top" aria-label="Наверх">&uarr;</a>
 </body>
 </html>
